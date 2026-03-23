@@ -1,0 +1,9 @@
+{
+    "cliVersion": "4.16.0",
+    "generatorName": "fernapi/fern-typescript-sdk",
+    "generatorVersion": "3.59.3",
+    "generatorConfig": {
+        "namespaceExport": "WhatsappSDK"
+    },
+    "sdkVersion": "0.0.1"
+}
