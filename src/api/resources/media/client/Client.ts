@@ -26,7 +26,7 @@ export class MediaClient {
      * Retrieve media metadata (URL, mime type, size) by media ID.
      *
      * @param {string} mediaId
-     * @param {WhatsappSDK.WhatsappApiGetMediaRequest} request
+     * @param {WhatsappSDK.GetMediaRequest} request
      * @param {MediaClient.RequestOptions} requestOptions - Request-specific configuration.
      *
      * @example
@@ -34,17 +34,17 @@ export class MediaClient {
      */
     public getMedia(
         mediaId: string,
-        request: WhatsappSDK.WhatsappApiGetMediaRequest = {},
+        request: WhatsappSDK.GetMediaRequest = {},
         requestOptions?: MediaClient.RequestOptions,
-    ): core.HttpResponsePromise<WhatsappSDK.WhatsappApiRetrieveMediaResponse> {
+    ): core.HttpResponsePromise<WhatsappSDK.RetrieveMediaResponse> {
         return core.HttpResponsePromise.fromPromise(this.__getMedia(mediaId, request, requestOptions));
     }
 
     private async __getMedia(
         mediaId: string,
-        request: WhatsappSDK.WhatsappApiGetMediaRequest = {},
+        request: WhatsappSDK.GetMediaRequest = {},
         requestOptions?: MediaClient.RequestOptions,
-    ): Promise<core.WithRawResponse<WhatsappSDK.WhatsappApiRetrieveMediaResponse>> {
+    ): Promise<core.WithRawResponse<WhatsappSDK.RetrieveMediaResponse>> {
         const { phone_number_id: phoneNumberId } = request;
         const _queryParams: Record<string, unknown> = {
             phone_number_id: phoneNumberId,
@@ -74,10 +74,7 @@ export class MediaClient {
             logging: this._options.logging,
         });
         if (_response.ok) {
-            return {
-                data: _response.body as WhatsappSDK.WhatsappApiRetrieveMediaResponse,
-                rawResponse: _response.rawResponse,
-            };
+            return { data: _response.body as WhatsappSDK.RetrieveMediaResponse, rawResponse: _response.rawResponse };
         }
 
         if (_response.error.reason === "status-code") {

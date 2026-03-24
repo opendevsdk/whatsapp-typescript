@@ -1,2 +1,2 @@
-export * from "./WhatsappApiRegisterNumberRequest.js";
-export * from "./WhatsappApiUploadEncryptionRequest.js";
+export * from "./RegisterNumberRequest.js";
+export * from "./UploadEncryptionRequest.js";

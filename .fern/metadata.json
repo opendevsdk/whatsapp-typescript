@@ -5,5 +5,5 @@
     "generatorConfig": {
         "namespaceExport": "WhatsappSDK"
     },
-    "sdkVersion": "0.0.2"
+    "sdkVersion": "0.0.3"
 }

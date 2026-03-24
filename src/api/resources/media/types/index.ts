@@ -1,1 +1,1 @@
-export * from "./WhatsappApiRetrieveMediaResponse.js";
+export * from "./RetrieveMediaResponse.js";

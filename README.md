@@ -1,9 +1,9 @@
-# OpendevsdkWhatsapp TypeScript Library
+# Opendevsdk TypeScript Library
 
 [![fern shield](https://img.shields.io/badge/%F0%9F%8C%BF-Built%20with%20Fern-brightgreen)](https://buildwithfern.com?utm_source=github&utm_medium=github&utm_campaign=readme&utm_source=https%3A%2F%2Fgithub.com%2Fopendevsdk%2Fwhatsapp-typescript)
 [![npm shield](https://img.shields.io/npm/v/@opendevsdk/whatsapp-typescript)](https://www.npmjs.com/package/@opendevsdk/whatsapp-typescript)
 
-The OpendevsdkWhatsapp TypeScript library provides convenient access to the OpendevsdkWhatsapp APIs from TypeScript.
+The Opendevsdk TypeScript library provides convenient access to the Opendevsdk APIs from TypeScript.
 
 ## Table of Contents
 

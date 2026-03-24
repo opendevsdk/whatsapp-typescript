@@ -1,1 +1,1 @@
-export type { WhatsappApiGetMediaRequest } from "./WhatsappApiGetMediaRequest.js";
+export type { GetMediaRequest } from "./GetMediaRequest.js";

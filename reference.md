@@ -1,6 +1,6 @@
 # Reference
 ## Flows
-<details><summary><code>client.flows.<a href="/src/api/resources/flows/client/Client.ts">createFlow</a>(wabaId, { ...params }) -> WhatsappSDK.WhatsappApiCreateFlowResponse</code></summary>
+<details><summary><code>client.flows.<a href="/src/api/resources/flows/client/Client.ts">createFlow</a>(wabaId, { ...params }) -> WhatsappSDK.CreateFlowResponse</code></summary>
 <dl>
 <dd>
 
@@ -74,7 +74,7 @@ await client.flows.createFlow("wabaId", {
 </dl>
 </details>
 
-<details><summary><code>client.flows.<a href="/src/api/resources/flows/client/Client.ts">updateFlowMetadata</a>(flowId, { ...params }) -> WhatsappSDK.WhatsappApiUpdateFlowMetadataResponse</code></summary>
+<details><summary><code>client.flows.<a href="/src/api/resources/flows/client/Client.ts">updateFlowMetadata</a>(flowId, { ...params }) -> WhatsappSDK.UpdateFlowMetadataResponse</code></summary>
 <dl>
 <dd>
 
@@ -145,7 +145,7 @@ await client.flows.updateFlowMetadata("flowId");
 </dl>
 </details>
 
-<details><summary><code>client.flows.<a href="/src/api/resources/flows/client/Client.ts">listFlows</a>(wabaId) -> WhatsappSDK.WhatsappApiGetManyFlowsResponse</code></summary>
+<details><summary><code>client.flows.<a href="/src/api/resources/flows/client/Client.ts">listFlows</a>(wabaId) -> WhatsappSDK.GetManyFlowsResponse</code></summary>
 <dl>
 <dd>
 
@@ -208,7 +208,7 @@ await client.flows.listFlows("wabaId");
 </dl>
 </details>
 
-<details><summary><code>client.flows.<a href="/src/api/resources/flows/client/Client.ts">getFlow</a>(flowId, { ...params }) -> WhatsappSDK.WhatsappApiFlowDetail</code></summary>
+<details><summary><code>client.flows.<a href="/src/api/resources/flows/client/Client.ts">getFlow</a>(flowId, { ...params }) -> WhatsappSDK.FlowDetail</code></summary>
 <dl>
 <dd>
 
@@ -259,7 +259,7 @@ await client.flows.getFlow("flowId");
 <dl>
 <dd>
 
-**request:** `WhatsappSDK.WhatsappApiGetFlowRequest` 
+**request:** `WhatsappSDK.GetFlowRequest` 
     
 </dd>
 </dl>
@@ -279,7 +279,7 @@ await client.flows.getFlow("flowId");
 </dl>
 </details>
 
-<details><summary><code>client.flows.<a href="/src/api/resources/flows/client/Client.ts">deleteFlow</a>(flowId) -> WhatsappSDK.WhatsappApiDeleteFlowResponse</code></summary>
+<details><summary><code>client.flows.<a href="/src/api/resources/flows/client/Client.ts">deleteFlow</a>(flowId) -> WhatsappSDK.DeleteFlowResponse</code></summary>
 <dl>
 <dd>
 
@@ -342,7 +342,7 @@ await client.flows.deleteFlow("flowId");
 </dl>
 </details>
 
-<details><summary><code>client.flows.<a href="/src/api/resources/flows/client/Client.ts">updateFlowJson</a>(flowId, { ...params }) -> WhatsappSDK.WhatsappApiUpdateFlowJsonResponse</code></summary>
+<details><summary><code>client.flows.<a href="/src/api/resources/flows/client/Client.ts">updateFlowJson</a>(flowId, { ...params }) -> WhatsappSDK.UpdateFlowJsonResponse</code></summary>
 <dl>
 <dd>
 
@@ -397,7 +397,7 @@ await client.flows.updateFlowJson("flowId", {
 <dl>
 <dd>
 
-**request:** `WhatsappSDK.WhatsappApiUpdateFlowJsonRequest` 
+**request:** `WhatsappSDK.UpdateFlowJsonRequest` 
     
 </dd>
 </dl>
@@ -417,7 +417,7 @@ await client.flows.updateFlowJson("flowId", {
 </dl>
 </details>
 
-<details><summary><code>client.flows.<a href="/src/api/resources/flows/client/Client.ts">getFlowPreview</a>(flowId, { ...params }) -> WhatsappSDK.WhatsappApiFlowPreviewResponse</code></summary>
+<details><summary><code>client.flows.<a href="/src/api/resources/flows/client/Client.ts">getFlowPreview</a>(flowId, { ...params }) -> WhatsappSDK.FlowPreviewResponse</code></summary>
 <dl>
 <dd>
 
@@ -470,7 +470,7 @@ await client.flows.getFlowPreview("flowId", {
 <dl>
 <dd>
 
-**request:** `WhatsappSDK.WhatsappApiGetFlowPreviewRequest` 
+**request:** `WhatsappSDK.GetFlowPreviewRequest` 
     
 </dd>
 </dl>
@@ -490,7 +490,7 @@ await client.flows.getFlowPreview("flowId", {
 </dl>
 </details>
 
-<details><summary><code>client.flows.<a href="/src/api/resources/flows/client/Client.ts">publishFlow</a>(flowId) -> WhatsappSDK.WhatsappApiPublishFlowResponse</code></summary>
+<details><summary><code>client.flows.<a href="/src/api/resources/flows/client/Client.ts">publishFlow</a>(flowId) -> WhatsappSDK.PublishFlowResponse</code></summary>
 <dl>
 <dd>
 
@@ -554,7 +554,7 @@ await client.flows.publishFlow("flowId");
 </details>
 
 ## Media
-<details><summary><code>client.media.<a href="/src/api/resources/media/client/Client.ts">getMedia</a>(mediaId, { ...params }) -> WhatsappSDK.WhatsappApiRetrieveMediaResponse</code></summary>
+<details><summary><code>client.media.<a href="/src/api/resources/media/client/Client.ts">getMedia</a>(mediaId, { ...params }) -> WhatsappSDK.RetrieveMediaResponse</code></summary>
 <dl>
 <dd>
 
@@ -605,7 +605,7 @@ await client.media.getMedia("mediaId");
 <dl>
 <dd>
 
-**request:** `WhatsappSDK.WhatsappApiGetMediaRequest` 
+**request:** `WhatsappSDK.GetMediaRequest` 
     
 </dd>
 </dl>
@@ -626,7 +626,7 @@ await client.media.getMedia("mediaId");
 </details>
 
 ## Messages
-<details><summary><code>client.messages.<a href="/src/api/resources/messages/client/Client.ts">sendMessage</a>(numberId, { ...params }) -> WhatsappSDK.WhatsappApiSendMessageResponse</code></summary>
+<details><summary><code>client.messages.<a href="/src/api/resources/messages/client/Client.ts">sendMessage</a>(numberId, { ...params }) -> WhatsappSDK.SendMessageResponse</code></summary>
 <dl>
 <dd>
 
@@ -638,7 +638,7 @@ await client.media.getMedia("mediaId");
 <dl>
 <dd>
 
-Send a WhatsApp message (text, media, interactive, template, contacts, etc.)
+Send a ssage (text, media, interactive, template, contacts, etc.)
 </dd>
 </dl>
 </dd>
@@ -673,7 +673,7 @@ await client.messages.sendMessage("numberId", {
 <dl>
 <dd>
 
-**numberId:** `string` — WhatsApp phone number ID
+**numberId:** `string` — one number ID
     
 </dd>
 </dl>
@@ -681,7 +681,7 @@ await client.messages.sendMessage("numberId", {
 <dl>
 <dd>
 
-**request:** `WhatsappSDK.WhatsappApiSendMessageRequest` 
+**request:** `WhatsappSDK.SendMessageRequest` 
     
 </dd>
 </dl>
@@ -701,7 +701,7 @@ await client.messages.sendMessage("numberId", {
 </dl>
 </details>
 
-<details><summary><code>client.messages.<a href="/src/api/resources/messages/client/Client.ts">showTypingIndicator</a>(numberId, { ...params }) -> WhatsappSDK.WhatsappApiShowTypingIndicatorResponse</code></summary>
+<details><summary><code>client.messages.<a href="/src/api/resources/messages/client/Client.ts">showTypingIndicator</a>(numberId, { ...params }) -> WhatsappSDK.ShowTypingIndicatorResponse</code></summary>
 <dl>
 <dd>
 
@@ -759,7 +759,7 @@ await client.messages.showTypingIndicator("numberId", {
 <dl>
 <dd>
 
-**request:** `WhatsappSDK.WhatsappApiShowTypingIndicatorRequest` 
+**request:** `WhatsappSDK.ShowTypingIndicatorRequest` 
     
 </dd>
 </dl>
@@ -833,7 +833,7 @@ await client.waba.uploadEncryptionKey("numberId", {
 <dl>
 <dd>
 
-**request:** `WhatsappSDK.WhatsappApiUploadEncryptionRequest` 
+**request:** `WhatsappSDK.UploadEncryptionRequest` 
     
 </dd>
 </dl>
@@ -907,7 +907,7 @@ await client.waba.registerNumber("numberId", {
 <dl>
 <dd>
 
-**request:** `WhatsappSDK.WhatsappApiRegisterNumberRequest` 
+**request:** `WhatsappSDK.RegisterNumberRequest` 
     
 </dd>
 </dl>

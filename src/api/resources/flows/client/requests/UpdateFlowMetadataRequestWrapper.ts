@@ -8,7 +8,7 @@ import type * as WhatsappSDK from "../../../../index.js";
  */
 export interface UpdateFlowMetadataRequestWrapper {
     name?: string;
-    categories?: WhatsappSDK.WhatsappApiFlowCategory[];
+    categories?: WhatsappSDK.FlowCategory[];
     endpoint_uri?: string;
     application_id?: string;
 }

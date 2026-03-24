@@ -39,7 +39,7 @@ export class FlowsClient {
         wabaId: string,
         request: WhatsappSDK.CreateFlowRequestWrapper,
         requestOptions?: FlowsClient.RequestOptions,
-    ): core.HttpResponsePromise<WhatsappSDK.WhatsappApiCreateFlowResponse> {
+    ): core.HttpResponsePromise<WhatsappSDK.CreateFlowResponse> {
         return core.HttpResponsePromise.fromPromise(this.__createFlow(wabaId, request, requestOptions));
     }
 
@@ -47,7 +47,7 @@ export class FlowsClient {
         wabaId: string,
         request: WhatsappSDK.CreateFlowRequestWrapper,
         requestOptions?: FlowsClient.RequestOptions,
-    ): Promise<core.WithRawResponse<WhatsappSDK.WhatsappApiCreateFlowResponse>> {
+    ): Promise<core.WithRawResponse<WhatsappSDK.CreateFlowResponse>> {
         const _authRequest: core.AuthRequest = await this._options.authProvider.getAuthRequest();
         const _headers: core.Fetcher.Args["headers"] = mergeHeaders(
             _authRequest.headers,
@@ -76,10 +76,7 @@ export class FlowsClient {
             logging: this._options.logging,
         });
         if (_response.ok) {
-            return {
-                data: _response.body as WhatsappSDK.WhatsappApiCreateFlowResponse,
-                rawResponse: _response.rawResponse,
-            };
+            return { data: _response.body as WhatsappSDK.CreateFlowResponse, rawResponse: _response.rawResponse };
         }
 
         if (_response.error.reason === "status-code") {
@@ -107,7 +104,7 @@ export class FlowsClient {
         flowId: string,
         request: WhatsappSDK.UpdateFlowMetadataRequestWrapper = {},
         requestOptions?: FlowsClient.RequestOptions,
-    ): core.HttpResponsePromise<WhatsappSDK.WhatsappApiUpdateFlowMetadataResponse> {
+    ): core.HttpResponsePromise<WhatsappSDK.UpdateFlowMetadataResponse> {
         return core.HttpResponsePromise.fromPromise(this.__updateFlowMetadata(flowId, request, requestOptions));
     }
 
@@ -115,7 +112,7 @@ export class FlowsClient {
         flowId: string,
         request: WhatsappSDK.UpdateFlowMetadataRequestWrapper = {},
         requestOptions?: FlowsClient.RequestOptions,
-    ): Promise<core.WithRawResponse<WhatsappSDK.WhatsappApiUpdateFlowMetadataResponse>> {
+    ): Promise<core.WithRawResponse<WhatsappSDK.UpdateFlowMetadataResponse>> {
         const _authRequest: core.AuthRequest = await this._options.authProvider.getAuthRequest();
         const _headers: core.Fetcher.Args["headers"] = mergeHeaders(
             _authRequest.headers,
@@ -145,7 +142,7 @@ export class FlowsClient {
         });
         if (_response.ok) {
             return {
-                data: _response.body as WhatsappSDK.WhatsappApiUpdateFlowMetadataResponse,
+                data: _response.body as WhatsappSDK.UpdateFlowMetadataResponse,
                 rawResponse: _response.rawResponse,
             };
         }
@@ -173,14 +170,14 @@ export class FlowsClient {
     public listFlows(
         wabaId: string,
         requestOptions?: FlowsClient.RequestOptions,
-    ): core.HttpResponsePromise<WhatsappSDK.WhatsappApiGetManyFlowsResponse> {
+    ): core.HttpResponsePromise<WhatsappSDK.GetManyFlowsResponse> {
         return core.HttpResponsePromise.fromPromise(this.__listFlows(wabaId, requestOptions));
     }
 
     private async __listFlows(
         wabaId: string,
         requestOptions?: FlowsClient.RequestOptions,
-    ): Promise<core.WithRawResponse<WhatsappSDK.WhatsappApiGetManyFlowsResponse>> {
+    ): Promise<core.WithRawResponse<WhatsappSDK.GetManyFlowsResponse>> {
         const _authRequest: core.AuthRequest = await this._options.authProvider.getAuthRequest();
         const _headers: core.Fetcher.Args["headers"] = mergeHeaders(
             _authRequest.headers,
@@ -206,10 +203,7 @@ export class FlowsClient {
             logging: this._options.logging,
         });
         if (_response.ok) {
-            return {
-                data: _response.body as WhatsappSDK.WhatsappApiGetManyFlowsResponse,
-                rawResponse: _response.rawResponse,
-            };
+            return { data: _response.body as WhatsappSDK.GetManyFlowsResponse, rawResponse: _response.rawResponse };
         }
 
         if (_response.error.reason === "status-code") {
@@ -227,7 +221,7 @@ export class FlowsClient {
      * Get a single flow by ID, optionally specifying fields.
      *
      * @param {string} flowId
-     * @param {WhatsappSDK.WhatsappApiGetFlowRequest} request
+     * @param {WhatsappSDK.GetFlowRequest} request
      * @param {FlowsClient.RequestOptions} requestOptions - Request-specific configuration.
      *
      * @example
@@ -235,17 +229,17 @@ export class FlowsClient {
      */
     public getFlow(
         flowId: string,
-        request: WhatsappSDK.WhatsappApiGetFlowRequest = {},
+        request: WhatsappSDK.GetFlowRequest = {},
         requestOptions?: FlowsClient.RequestOptions,
-    ): core.HttpResponsePromise<WhatsappSDK.WhatsappApiFlowDetail> {
+    ): core.HttpResponsePromise<WhatsappSDK.FlowDetail> {
         return core.HttpResponsePromise.fromPromise(this.__getFlow(flowId, request, requestOptions));
     }
 
     private async __getFlow(
         flowId: string,
-        request: WhatsappSDK.WhatsappApiGetFlowRequest = {},
+        request: WhatsappSDK.GetFlowRequest = {},
         requestOptions?: FlowsClient.RequestOptions,
-    ): Promise<core.WithRawResponse<WhatsappSDK.WhatsappApiFlowDetail>> {
+    ): Promise<core.WithRawResponse<WhatsappSDK.FlowDetail>> {
         const { fields } = request;
         const _queryParams: Record<string, unknown> = {
             fields,
@@ -275,7 +269,7 @@ export class FlowsClient {
             logging: this._options.logging,
         });
         if (_response.ok) {
-            return { data: _response.body as WhatsappSDK.WhatsappApiFlowDetail, rawResponse: _response.rawResponse };
+            return { data: _response.body as WhatsappSDK.FlowDetail, rawResponse: _response.rawResponse };
         }
 
         if (_response.error.reason === "status-code") {
@@ -301,14 +295,14 @@ export class FlowsClient {
     public deleteFlow(
         flowId: string,
         requestOptions?: FlowsClient.RequestOptions,
-    ): core.HttpResponsePromise<WhatsappSDK.WhatsappApiDeleteFlowResponse> {
+    ): core.HttpResponsePromise<WhatsappSDK.DeleteFlowResponse> {
         return core.HttpResponsePromise.fromPromise(this.__deleteFlow(flowId, requestOptions));
     }
 
     private async __deleteFlow(
         flowId: string,
         requestOptions?: FlowsClient.RequestOptions,
-    ): Promise<core.WithRawResponse<WhatsappSDK.WhatsappApiDeleteFlowResponse>> {
+    ): Promise<core.WithRawResponse<WhatsappSDK.DeleteFlowResponse>> {
         const _authRequest: core.AuthRequest = await this._options.authProvider.getAuthRequest();
         const _headers: core.Fetcher.Args["headers"] = mergeHeaders(
             _authRequest.headers,
@@ -334,10 +328,7 @@ export class FlowsClient {
             logging: this._options.logging,
         });
         if (_response.ok) {
-            return {
-                data: _response.body as WhatsappSDK.WhatsappApiDeleteFlowResponse,
-                rawResponse: _response.rawResponse,
-            };
+            return { data: _response.body as WhatsappSDK.DeleteFlowResponse, rawResponse: _response.rawResponse };
         }
 
         if (_response.error.reason === "status-code") {
@@ -355,7 +346,7 @@ export class FlowsClient {
      * Upload or replace the flow.json asset for a flow.
      *
      * @param {string} flowId
-     * @param {WhatsappSDK.WhatsappApiUpdateFlowJsonRequest} request
+     * @param {WhatsappSDK.UpdateFlowJsonRequest} request
      * @param {FlowsClient.RequestOptions} requestOptions - Request-specific configuration.
      *
      * @example
@@ -367,17 +358,17 @@ export class FlowsClient {
      */
     public updateFlowJson(
         flowId: string,
-        request: WhatsappSDK.WhatsappApiUpdateFlowJsonRequest,
+        request: WhatsappSDK.UpdateFlowJsonRequest,
         requestOptions?: FlowsClient.RequestOptions,
-    ): core.HttpResponsePromise<WhatsappSDK.WhatsappApiUpdateFlowJsonResponse> {
+    ): core.HttpResponsePromise<WhatsappSDK.UpdateFlowJsonResponse> {
         return core.HttpResponsePromise.fromPromise(this.__updateFlowJson(flowId, request, requestOptions));
     }
 
     private async __updateFlowJson(
         flowId: string,
-        request: WhatsappSDK.WhatsappApiUpdateFlowJsonRequest,
+        request: WhatsappSDK.UpdateFlowJsonRequest,
         requestOptions?: FlowsClient.RequestOptions,
-    ): Promise<core.WithRawResponse<WhatsappSDK.WhatsappApiUpdateFlowJsonResponse>> {
+    ): Promise<core.WithRawResponse<WhatsappSDK.UpdateFlowJsonResponse>> {
         const _authRequest: core.AuthRequest = await this._options.authProvider.getAuthRequest();
         const _headers: core.Fetcher.Args["headers"] = mergeHeaders(
             _authRequest.headers,
@@ -406,10 +397,7 @@ export class FlowsClient {
             logging: this._options.logging,
         });
         if (_response.ok) {
-            return {
-                data: _response.body as WhatsappSDK.WhatsappApiUpdateFlowJsonResponse,
-                rawResponse: _response.rawResponse,
-            };
+            return { data: _response.body as WhatsappSDK.UpdateFlowJsonResponse, rawResponse: _response.rawResponse };
         }
 
         if (_response.error.reason === "status-code") {
@@ -427,7 +415,7 @@ export class FlowsClient {
      * Get the web preview URL for a flow. The `fields` parameter controls whether the existing preview link is invalidated. The returned `preview_url` can then have interactive URL parameters (interactive, flow_token, flow_action, flow_action_payload, phone_number) appended by the caller.
      *
      * @param {string} flowId
-     * @param {WhatsappSDK.WhatsappApiGetFlowPreviewRequest} request
+     * @param {WhatsappSDK.GetFlowPreviewRequest} request
      * @param {FlowsClient.RequestOptions} requestOptions - Request-specific configuration.
      *
      * @example
@@ -437,17 +425,17 @@ export class FlowsClient {
      */
     public getFlowPreview(
         flowId: string,
-        request: WhatsappSDK.WhatsappApiGetFlowPreviewRequest,
+        request: WhatsappSDK.GetFlowPreviewRequest,
         requestOptions?: FlowsClient.RequestOptions,
-    ): core.HttpResponsePromise<WhatsappSDK.WhatsappApiFlowPreviewResponse> {
+    ): core.HttpResponsePromise<WhatsappSDK.FlowPreviewResponse> {
         return core.HttpResponsePromise.fromPromise(this.__getFlowPreview(flowId, request, requestOptions));
     }
 
     private async __getFlowPreview(
         flowId: string,
-        request: WhatsappSDK.WhatsappApiGetFlowPreviewRequest,
+        request: WhatsappSDK.GetFlowPreviewRequest,
         requestOptions?: FlowsClient.RequestOptions,
-    ): Promise<core.WithRawResponse<WhatsappSDK.WhatsappApiFlowPreviewResponse>> {
+    ): Promise<core.WithRawResponse<WhatsappSDK.FlowPreviewResponse>> {
         const { fields } = request;
         const _queryParams: Record<string, unknown> = {
             fields,
@@ -477,10 +465,7 @@ export class FlowsClient {
             logging: this._options.logging,
         });
         if (_response.ok) {
-            return {
-                data: _response.body as WhatsappSDK.WhatsappApiFlowPreviewResponse,
-                rawResponse: _response.rawResponse,
-            };
+            return { data: _response.body as WhatsappSDK.FlowPreviewResponse, rawResponse: _response.rawResponse };
         }
 
         if (_response.error.reason === "status-code") {
@@ -506,14 +491,14 @@ export class FlowsClient {
     public publishFlow(
         flowId: string,
         requestOptions?: FlowsClient.RequestOptions,
-    ): core.HttpResponsePromise<WhatsappSDK.WhatsappApiPublishFlowResponse> {
+    ): core.HttpResponsePromise<WhatsappSDK.PublishFlowResponse> {
         return core.HttpResponsePromise.fromPromise(this.__publishFlow(flowId, requestOptions));
     }
 
     private async __publishFlow(
         flowId: string,
         requestOptions?: FlowsClient.RequestOptions,
-    ): Promise<core.WithRawResponse<WhatsappSDK.WhatsappApiPublishFlowResponse>> {
+    ): Promise<core.WithRawResponse<WhatsappSDK.PublishFlowResponse>> {
         const _authRequest: core.AuthRequest = await this._options.authProvider.getAuthRequest();
         const _headers: core.Fetcher.Args["headers"] = mergeHeaders(
             _authRequest.headers,
@@ -539,10 +524,7 @@ export class FlowsClient {
             logging: this._options.logging,
         });
         if (_response.ok) {
-            return {
-                data: _response.body as WhatsappSDK.WhatsappApiPublishFlowResponse,
-                rawResponse: _response.rawResponse,
-            };
+            return { data: _response.body as WhatsappSDK.PublishFlowResponse, rawResponse: _response.rawResponse };
         }
 
         if (_response.error.reason === "status-code") {

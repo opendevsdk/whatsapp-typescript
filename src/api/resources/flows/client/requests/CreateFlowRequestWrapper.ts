@@ -11,7 +11,7 @@ import type * as WhatsappSDK from "../../../../index.js";
  */
 export interface CreateFlowRequestWrapper {
     name: string;
-    categories: WhatsappSDK.WhatsappApiFlowCategory[];
+    categories: WhatsappSDK.FlowCategory[];
     clone_flow_id?: string;
     endpoint_uri?: string;
     flow_json?: string;

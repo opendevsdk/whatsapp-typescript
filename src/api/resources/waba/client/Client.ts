@@ -26,7 +26,7 @@ export class WabaClient {
      * Upload the business public encryption key used for end-to-end encrypted WhatsApp Flows. Uses application/x-www-form-urlencoded content type.
      *
      * @param {string} numberId
-     * @param {WhatsappSDK.WhatsappApiUploadEncryptionRequest} request
+     * @param {WhatsappSDK.UploadEncryptionRequest} request
      * @param {WabaClient.RequestOptions} requestOptions - Request-specific configuration.
      *
      * @example
@@ -36,7 +36,7 @@ export class WabaClient {
      */
     public uploadEncryptionKey(
         numberId: string,
-        request: WhatsappSDK.WhatsappApiUploadEncryptionRequest,
+        request: WhatsappSDK.UploadEncryptionRequest,
         requestOptions?: WabaClient.RequestOptions,
     ): core.HttpResponsePromise<void> {
         return core.HttpResponsePromise.fromPromise(this.__uploadEncryptionKey(numberId, request, requestOptions));
@@ -44,7 +44,7 @@ export class WabaClient {
 
     private async __uploadEncryptionKey(
         numberId: string,
-        request: WhatsappSDK.WhatsappApiUploadEncryptionRequest,
+        request: WhatsappSDK.UploadEncryptionRequest,
         requestOptions?: WabaClient.RequestOptions,
     ): Promise<core.WithRawResponse<void>> {
         const _authRequest: core.AuthRequest = await this._options.authProvider.getAuthRequest();
@@ -98,7 +98,7 @@ export class WabaClient {
      * Register a phone number with WhatsApp Cloud API.
      *
      * @param {string} numberId
-     * @param {WhatsappSDK.WhatsappApiRegisterNumberRequest} request
+     * @param {WhatsappSDK.RegisterNumberRequest} request
      * @param {WabaClient.RequestOptions} requestOptions - Request-specific configuration.
      *
      * @example
@@ -109,7 +109,7 @@ export class WabaClient {
      */
     public registerNumber(
         numberId: string,
-        request: WhatsappSDK.WhatsappApiRegisterNumberRequest,
+        request: WhatsappSDK.RegisterNumberRequest,
         requestOptions?: WabaClient.RequestOptions,
     ): core.HttpResponsePromise<void> {
         return core.HttpResponsePromise.fromPromise(this.__registerNumber(numberId, request, requestOptions));
@@ -117,7 +117,7 @@ export class WabaClient {
 
     private async __registerNumber(
         numberId: string,
-        request: WhatsappSDK.WhatsappApiRegisterNumberRequest,
+        request: WhatsappSDK.RegisterNumberRequest,
         requestOptions?: WabaClient.RequestOptions,
     ): Promise<core.WithRawResponse<void>> {
         const _authRequest: core.AuthRequest = await this._options.authProvider.getAuthRequest();

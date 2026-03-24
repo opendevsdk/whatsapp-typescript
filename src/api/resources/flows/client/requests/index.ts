@@ -1,5 +1,5 @@
 export type { CreateFlowRequestWrapper } from "./CreateFlowRequestWrapper.js";
+export type { GetFlowPreviewRequest } from "./GetFlowPreviewRequest.js";
+export type { GetFlowRequest } from "./GetFlowRequest.js";
+export type { UpdateFlowJsonRequest } from "./UpdateFlowJsonRequest.js";
 export type { UpdateFlowMetadataRequestWrapper } from "./UpdateFlowMetadataRequestWrapper.js";
-export type { WhatsappApiGetFlowPreviewRequest } from "./WhatsappApiGetFlowPreviewRequest.js";
-export type { WhatsappApiGetFlowRequest } from "./WhatsappApiGetFlowRequest.js";
-export type { WhatsappApiUpdateFlowJsonRequest } from "./WhatsappApiUpdateFlowJsonRequest.js";

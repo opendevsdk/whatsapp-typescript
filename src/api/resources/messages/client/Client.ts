@@ -23,10 +23,10 @@ export class MessagesClient {
     }
 
     /**
-     * Send a WhatsApp message (text, media, interactive, template, contacts, etc.)
+     * Send a ssage (text, media, interactive, template, contacts, etc.)
      *
-     * @param {string} numberId - WhatsApp phone number ID
-     * @param {WhatsappSDK.WhatsappApiSendMessageRequest} request
+     * @param {string} numberId - one number ID
+     * @param {WhatsappSDK.SendMessageRequest} request
      * @param {MessagesClient.RequestOptions} requestOptions - Request-specific configuration.
      *
      * @example
@@ -38,17 +38,17 @@ export class MessagesClient {
      */
     public sendMessage(
         numberId: string,
-        request: WhatsappSDK.WhatsappApiSendMessageRequest,
+        request: WhatsappSDK.SendMessageRequest,
         requestOptions?: MessagesClient.RequestOptions,
-    ): core.HttpResponsePromise<WhatsappSDK.WhatsappApiSendMessageResponse> {
+    ): core.HttpResponsePromise<WhatsappSDK.SendMessageResponse> {
         return core.HttpResponsePromise.fromPromise(this.__sendMessage(numberId, request, requestOptions));
     }
 
     private async __sendMessage(
         numberId: string,
-        request: WhatsappSDK.WhatsappApiSendMessageRequest,
+        request: WhatsappSDK.SendMessageRequest,
         requestOptions?: MessagesClient.RequestOptions,
-    ): Promise<core.WithRawResponse<WhatsappSDK.WhatsappApiSendMessageResponse>> {
+    ): Promise<core.WithRawResponse<WhatsappSDK.SendMessageResponse>> {
         const _authRequest: core.AuthRequest = await this._options.authProvider.getAuthRequest();
         const _headers: core.Fetcher.Args["headers"] = mergeHeaders(
             _authRequest.headers,
@@ -77,10 +77,7 @@ export class MessagesClient {
             logging: this._options.logging,
         });
         if (_response.ok) {
-            return {
-                data: _response.body as WhatsappSDK.WhatsappApiSendMessageResponse,
-                rawResponse: _response.rawResponse,
-            };
+            return { data: _response.body as WhatsappSDK.SendMessageResponse, rawResponse: _response.rawResponse };
         }
 
         if (_response.error.reason === "status-code") {
@@ -98,7 +95,7 @@ export class MessagesClient {
      * Show a "typing…" indicator to the recipient. Send this before sending the actual message for a more natural conversation flow.
      *
      * @param {string} numberId
-     * @param {WhatsappSDK.WhatsappApiShowTypingIndicatorRequest} request
+     * @param {WhatsappSDK.ShowTypingIndicatorRequest} request
      * @param {MessagesClient.RequestOptions} requestOptions - Request-specific configuration.
      *
      * @example
@@ -113,17 +110,17 @@ export class MessagesClient {
      */
     public showTypingIndicator(
         numberId: string,
-        request: WhatsappSDK.WhatsappApiShowTypingIndicatorRequest,
+        request: WhatsappSDK.ShowTypingIndicatorRequest,
         requestOptions?: MessagesClient.RequestOptions,
-    ): core.HttpResponsePromise<WhatsappSDK.WhatsappApiShowTypingIndicatorResponse> {
+    ): core.HttpResponsePromise<WhatsappSDK.ShowTypingIndicatorResponse> {
         return core.HttpResponsePromise.fromPromise(this.__showTypingIndicator(numberId, request, requestOptions));
     }
 
     private async __showTypingIndicator(
         numberId: string,
-        request: WhatsappSDK.WhatsappApiShowTypingIndicatorRequest,
+        request: WhatsappSDK.ShowTypingIndicatorRequest,
         requestOptions?: MessagesClient.RequestOptions,
-    ): Promise<core.WithRawResponse<WhatsappSDK.WhatsappApiShowTypingIndicatorResponse>> {
+    ): Promise<core.WithRawResponse<WhatsappSDK.ShowTypingIndicatorResponse>> {
         const _authRequest: core.AuthRequest = await this._options.authProvider.getAuthRequest();
         const _headers: core.Fetcher.Args["headers"] = mergeHeaders(
             _authRequest.headers,
@@ -153,7 +150,7 @@ export class MessagesClient {
         });
         if (_response.ok) {
             return {
-                data: _response.body as WhatsappSDK.WhatsappApiShowTypingIndicatorResponse,
+                data: _response.body as WhatsappSDK.ShowTypingIndicatorResponse,
                 rawResponse: _response.rawResponse,
             };
         }
